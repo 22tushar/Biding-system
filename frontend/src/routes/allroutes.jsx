@@ -8,6 +8,7 @@ import Signup from "../pages/login/signup";
 import Profile from "../pages/profile/profile";
 import Signuplabour from "../pages/login/signuplabour";
 import Labour from "../pages/labour";
+import Bidrequest from '../pages/bidrequest';
 
 const AllRoutes = () => {
   return (
@@ -20,6 +21,7 @@ const AllRoutes = () => {
       <Route path="/sell" element={<Sell/>} ></Route>
       <Route path="/signuplabour" element={<Signuplabour/>} ></Route>
       <Route path="/labour" element={<Labour/>} ></Route>
+      <Route path="/bidrequest" element={<Bidrequest/>} ></Route>
     </Routes>
   );
 };

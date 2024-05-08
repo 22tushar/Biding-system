@@ -1,5 +1,7 @@
 const express = require("express");
 const UserModel = require("../models/user.mode");
+const ProductModel = require("../models/product.model");
+const BidModel = require("../models/bid.model");
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 const authentication = require("../middlewares/authentication.middleware");
@@ -70,6 +72,23 @@ userRouter.post("/login", async (req, res) => {
     res.send({ message: "Internal Error" });
 
     console.log(error);
+  }
+});
+
+
+userRouter.get("/employee_bids/:employeeId", async (req, res) => {
+  const {employeeId} = req.params;
+  console.log(employeeId)
+  try {
+    // Find all products posted by the employee
+    const products = await ProductModel.find({ soldBy: employeeId });
+    // console.log(products)
+    // Get all bids corresponding to these products
+    const bids = await BidModel.find({ productId: { $in: products.map(product => product._id) } }).populate('productId');
+    console.log(bids)
+    res.send({ bids });
+  } catch (error) {
+    res.status(500).send({ message: "Internal Server Error" });
   }
 });
 

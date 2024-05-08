@@ -5,8 +5,26 @@ import {
   USER_LOGIN_REQUEST_SUCCESS,
   USER_LOGOUT_REQUEST_SUCCESS,
   GET_LABOURERS_REQUEST_SUCCESS,
+  GET_EMPLOYEE_BIDS_REQUEST,
+  GET_EMPLOYEE_BIDS_SUCCESS,
+  GET_EMPLOYEE_BIDS_FAIL,
+  GET_EMPLOYEE_BIDS_ERROR,
 } from "./user.action_type";
 import Cookies from "js-cookie";
+
+export const getEmployeeBids = (employeeId) => async (dispatch) => {
+  dispatch({ type: GET_EMPLOYEE_BIDS_REQUEST });
+
+  try {
+    
+    const response = await axios.get("http://localhost:8080/users/employee_bids/"+`${employeeId}`)
+    
+    dispatch({ type: GET_EMPLOYEE_BIDS_SUCCESS, payload: response.data.bids });
+  } catch (error) {
+    // window.alert(error.message)
+    dispatch({ type: GET_EMPLOYEE_BIDS_ERROR, payload: error.message });
+  }
+};
 
 export const onUserLoginAction = (userObj,navigate,notifyError,notifySuccess,setIsLoading) => async (dispatch) => {
   // console.log(userObj);

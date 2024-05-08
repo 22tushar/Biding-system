@@ -1,0 +1,54 @@
+.requests-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .requests-list {
+    margin-top: 20px;
+  }
+  
+  .request-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c0e7fd; /* Light gray background */
+  }
+  
+  .request-item:hover {
+    background-color: #f0f0f0; /* Lighter gray background on hover */
+  }
+  
+  .action-buttons button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth color transition */
+  }
+  
+  .action-buttons button:hover {
+    filter: brightness(90%); /* Slightly darken the button on hover */
+  }
+  
+  .accept-button {
+    background-color: #4caf50; /* Green color for accept button */
+    color: white;
+  }
+  
+  .accept-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }
+  
+  .reject-button {
+    background-color: #f44336; /* Red color for reject button */
+    color: white;
+  }
+  
+  .reject-button:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
+  }
+  

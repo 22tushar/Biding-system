@@ -41,7 +41,7 @@ const Home = () => {
   const getProduct = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/products/all/?q=${searchRef.current?.value}`
+        'http://localhost:8080/products/all/?q='+`${searchRef.current?.value}`
       );
       // console.log(response)
       setAllSearches(response.data);

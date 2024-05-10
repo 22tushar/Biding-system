@@ -43,6 +43,7 @@ const Bidrequest = () => {
           <div key={request._id} className="request-item">
             <p><h1>{request.userName}</h1> sent you a request</p>
             <p>Bid Amount <h1>{request.bidAmount}</h1></p>
+            <p>Product Name: <h1>{request?.productName}</h1></p>
             <div className="action-buttons">
               {!isAccepted(request._id) && !isRejected(request._id) && (
                 <React.Fragment>

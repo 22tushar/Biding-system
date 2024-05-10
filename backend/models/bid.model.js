@@ -7,6 +7,7 @@ const bidSchema = mongoose.Schema(
     createdBy: String,
     bidAmount: Number,
     productId: String,
+    productName:String,
   },
   {
     timestamps: true,

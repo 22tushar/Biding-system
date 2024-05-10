@@ -8,7 +8,7 @@ bidRouter.post("/add", async (req, res) => {
 
   try {
     const newBid = await BidModel.create(input);
-    
+    console.log(newBid)
     res.send({ message: "new bid added" });
   } catch (error) {
     console.log(error);

@@ -83,6 +83,7 @@ const Drawer = ({
       userName: loginUserDetail?.userName,
       bidAmount,
       productId: _id,
+      productName:productName,
     };
     if (!socket) {
       console.log('socket not initialize')
